@@ -69,6 +69,12 @@
             icon: 'https://www.wegstatus.nl/favicon.ico',
             title: 'Wegstatus',
             handler: gotoWegstatus
+        },
+        {
+            id: 'MatrixNL',
+            icon: 'https://matrixnl.nl/favicon.ico?v=2',
+            title: 'MatrixNL',
+            handler: gotoMatrixNL
         }
     ];
 
@@ -181,6 +187,13 @@
         const coords = getMapCoordinates();
         const zoom = getMapZoomlevel();
         const url = `https://www.google.com/maps/@${coords.y},${coords.x},${zoom}z`;
+        window.open(url, '_blank');
+    }
+
+    function gotoMatrixNL() {
+        const coords = getMapCoordinates();
+        const zoom = getMapZoomlevel();
+        const url = `https://matrixnl.nl/index.php?center=${coords.y},${coords.x}&zoom=${zoom}`;
         window.open(url, '_blank');
     }
 
